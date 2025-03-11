@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Skye</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash-screen" class="screen active">
+    <svg class="logo" viewBox="0 0 501 542" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M437.24 13.2744L274.132 48.2938C184.249 67.9861 95.7086 81.5743 65.8466 85.7409C34.4397 90.1232 18.3212 89.5388 16.3247 92.5924C14.3282 95.646 15.2875 108.623 17.9301 121.249C22.3344 142.29 26.2297 144.111 64.4966 142.251C98.9333 138.493 159.332 129.429 224.982 115.687C291.651 102.611 345.694 92.1777 345.694 92.1777C345.87 93.0194 328.313 109.873 306.41 131.15L265.932 168.615L287.522 187.816L309.288 207.86L372.648 145.399C407.587 110.851 443.368 76.1261 452.9 67.1024C467.62 53.4788 467.757 49.936 453.428 31.8499L437.24 13.2744Z" fill="white"/>
+      <path d="M108.903 277.704C121.55 293.485 121.55 296.116 97.1003 327.679C5.2048 447.796 103.002 503.909 362.67 481.99C425.901 475.853 482.387 470.592 488.289 469.715C493.347 468.838 498.406 480.236 500.092 495.141C503.464 531.089 494.19 532.842 316.301 539.856C160.331 545.117 91.1988 533.719 40.6141 493.388C-18.4014 446.919 -11.6568 360.996 57.4756 281.211C78.5525 257.538 90.3556 256.661 108.903 277.704Z" fill="white"/>
+    </svg>
+  </div>
+
+  <!-- Flight Number Screen -->
+  <div id="flight-number-screen" class="screen">
+    <h1 class="screen-title">Enter flight number</h1>
+    <div class="input-container">
+      <div class="input-wrapper">
+        <input type="text" id="flight-number-input" class="text-input" placeholder="XX12345">
+        <button id="enter-button" class="button button-primary">Enter</button>
+        <svg id="flight-number-icon" class="input-icon" viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+        </svg>
+      </div>
+    </div>
+    <div class="boardingpass-button-container">
+      <button class="button button-primary">
+        Scan boarding pass to auto-fill
+        <svg class="button-icon" viewBox="0 0 24 24">
+          <path d="M3 11h8V3H3v8zm2-6h4v4H5V5zm8-2v8h8V3h-8zm6 6h-4V5h4v4zM3 21h8v-8H3v8zm2-6h4v4H5v-4zm13-2h-2v3h-3v2h3v3h2v-3h3v-2h-3z" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Language Selector -->
+    <div class="language-selector-container">
+      <div class="language-selector-label">Select language:</div>
+      <button class="button language-selector">
+        English
+        <svg class="dropdown-arrow" viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5z"></path>
+        </svg>
+      </button>
+      <select class="language-selector-dropdown">
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- Landing Page -->
+  <div id="landing-page" class="screen">
+    <div class="landing-header">
+      <!--<h1 class="landing-title">Activate Skye for a delightful airport experience</h1>-->
+      <!--<h1 class="landing-title">Skye. Because the journey starts on the ground.</h1>-->
+      <div class="feature-card">
+        <p class="feature-text">Skye, Copenhagen Airport’s AI agent, guides you smoothly from A to B — so you can enjoy every moment before your departure in:</p>
+      </div>
+    </div>
+
+    <div id="countdown-card" class="countdown-card">
+      <div class="departure-info">
+        <h2 class="countdown-title">Time to departure</h2>
+        <div id="countdown-timer" class="countdown-timer">03:02:00</div>
+      </div>
+      <div class="countdown-actions">
+        <button id="view-flight-details" class="button button-secondary">
+          <span class="button-text">View flight details</span>
+        </button>
+        <button id="activate-skye" class="button button-primary">
+          <span class="button-text">Talk to Skye</span>
+          <img src="assets/icons/skye_24x24.svg" alt="Skye Icon" class="button-icon">
+        </button>
+      </div>
+
+    </div>
+
+    <div class="journey-filter">
+      <div class="journey-filter-container">
+        <button class="journey-filter-button active" data-filter="mix">Mix</button>
+        <button class="journey-filter-button" data-filter="relax">Relax</button>
+        <button class="journey-filter-button" data-filter="explore">Explore</button>
+        <button class="journey-filter-button" data-filter="savor">Savor</button>
+      </div>
+    </div>
+
+    <div class="timeline-container">
+      <div id="timeline" class="timeline">
+        <!-- Timeline items added dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Flight Details Modal -->
+  <div id="flight-details-modal" class="modal">
+    <div class="modal-content">
+      <h2 class="modal-title">Flight Details</h2>
+      <div class="flight-detail">
+        <div class="flight-detail-label">Destination:</div>
+        <div class="flight-detail-value">Tokyo, Japan (HND)</div>
+      </div>
+      <div class="flight-detail">
+        <div class="flight-detail-label">Flight Number:</div>
+        <div class="flight-detail-value">XX12345</div>
+      </div>
+      <div class="flight-detail">
+        <div class="flight-detail-label">Gate:</div>
+        <div class="flight-detail-value">A124</div>
+      </div>
+      <div class="flight-detail">
+        <div class="flight-detail-label">Departure Time:</div>
+        <div class="flight-detail-value">11:50 AM</div>
+      </div>
+      <div class="flight-detail">
+        <div class="flight-detail-label">Arrival Time:</div>
+        <div class="flight-detail-value">2:45 PM (Local Time)</div>
+      </div>
+      <div class="flight-detail">
+        <div class="flight-detail-label">Boarding Time:</div>
+        <div class="flight-detail-value">10:55 AM</div>
+      </div>
+      <div class="flight-detail">
+        <div class="flight-detail-label">Seat:</div>
+        <div class="flight-detail-value">14A</div>
+      </div>
+      <div class="flight-detail">
+        <div class="flight-detail-label">Airline:</div>
+        <div class="flight-detail-value">Placeholder Airlines</div>
+      </div>
+      <button id="close-flight-details" class="button button-secondary modal-close">Close</button>
+    </div>
+  </div>
+
+  <!-- Google Maps Modal -->
+  <div id="map-modal" class="modal">
+    <div class="modal-content">
+      <div id="map-modal-content"></div>
+      <button class="button button-secondary modal-close" onclick="document.getElementById('map-modal').classList.remove('active')">Close</button>
+    </div>
+  </div>
+
+
+
+
+  <!-- Chat Overlay -->
+  <div id="chatbackgroundOverlay"></div>
+  <div class="chat-container">
+     <div class="chat-button" onclick="openChatOverlay()">
+       <div id="chat-logo-container">
+         <svg class="chat-logo" viewBox="0 0 501 542" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <!-- Your original SVG content here -->
+         </svg>
+       </div>
+     </div>
+
+     <div id="chatOverlay" class="chat-overlay">
+       <div class="chat-header">
+         <div class="chat-title">
+           <div id="emoji-face-container" class="hidden">
+             <div class="emoji-face">
+               <div class="eyes">
+                 <div class="eye left-eye">
+                   <div class="svg-wrapper">
+                     <img id="leftEye" src="assets/icons/expressions/Left_Eye_Neutral.svg" alt="Left Eye">
+                   </div>
+                 </div>
+                 <div class="eye right-eye">
+                   <div class="svg-wrapper">
+                     <img id="rightEye" src="assets/icons/expressions/Right_Eye_Neutral.svg" alt="Right Eye">
+                   </div>
+                 </div>
+               </div>
+               <div class="mouth">
+                 <div class="svg-wrapper">
+                   <img id="mouth" src="assets/icons/expressions/Mouth_Signature_Smile.svg" alt="Mouth">
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div id="header-logo-container">
+             <svg class="chat-logo" viewBox="0 0 501 542" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M437.24 13.2744L274.132 48.2938C184.249 67.9861 95.7086 81.5743 65.8466 85.7409C34.4397 90.1232 18.3212 89.5388 16.3247 92.5924C14.3282 95.646 15.2875 108.623 17.9301 121.249C22.3344 142.29 26.2297 144.111 64.4966 142.251C98.9333 138.493 159.332 129.429 224.982 115.687C291.651 102.611 345.694 92.1777 345.694 92.1777C345.87 93.0194 328.313 109.873 306.41 131.15L265.932 168.615L287.522 187.816L309.288 207.86L372.648 145.399C407.587 110.851 443.368 76.1261 452.9 67.1024C467.62 53.4788 467.757 49.936 453.428 31.8499L437.24 13.2744Z" fill="#4287FF"/>
+               <path d="M108.903 277.704C121.55 293.485 121.55 296.116 97.1003 327.679C5.2048 447.796 103.002 503.909 362.67 481.99C425.901 475.853 482.387 470.592 488.289 469.715C493.347 468.838 498.406 480.236 500.092 495.141C503.464 531.089 494.19 532.842 316.301 539.856C160.331 545.117 91.1988 533.719 40.6141 493.388C-18.4014 446.919 -11.6568 360.996 57.4756 281.211C78.5525 257.538 90.3556 256.661 108.903 277.704Z" fill="#4287FF"/>
+             </svg>
+           </div>
+           <!--<h3>Skye</h3>-->
+         </div>
+         <button class="close-button" onclick="closeChatOverlay()">&times;</button>
+       </div>
+
+       <div id="chatMessages" class="chat-messages">
+         <div class="message message-ai">
+           Hi, I'm Skye! I can see you have 3h and 2min before you leave. Why not make the most of your time here in the airport? Ask me about anything you want to do 😊
+           <div class="suggested-inputs">
+             <button class="suggested-input">Where can I find a gift for my mom?</button>
+             <button class="suggested-input">Where can I charge my phone?</button>
+             <button class="suggested-input">Let's go to Lagkagehuset instead of Georg Jensen</button>
+           </div>
+         </div>
+       </div>
+
+       <div class="chat-input-container">
+         <input type="text" id="chatInput" class="chat-input" placeholder="As Skye anything..." onkeydown="if(event.key === 'Enter') sendChatMessage()">
+         <button class="send-button" onclick="sendChatMessage()">
+           <svg class="chat-send-icon" viewBox="0 0 24 24"fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path d="M21.6357 7.0486L13.9014 8.70916C9.63933 9.64293 5.44092 10.2873 4.02492 10.4848C2.53566 10.6926 1.77135 10.6649 1.67668 10.8097C1.58201 10.9545 1.62749 11.5699 1.7528 12.1685C1.96165 13.1663 2.14636 13.2526 3.9609 13.1644C5.59383 12.9863 8.45782 12.5564 11.5709 11.9048C14.7322 11.2848 17.2948 10.7901 17.2948 10.7901C17.3031 10.83 16.4706 11.6291 15.432 12.638L13.5126 14.4146L14.5364 15.3251L15.5685 16.2755L18.5729 13.3137C20.2296 11.6755 21.9263 10.0289 22.3783 9.60103C23.0763 8.95502 23.0828 8.78703 22.4033 7.92942L21.6357 7.0486Z" fill="white"/>
+           </svg>
+         </button>
+       </div>
+     </div>
+   </div>
+
+
+
+  <script src="js/script.js" defer></script>
+
+</body>
+</html>

@@ -1243,8 +1243,13 @@ body {
   transform: translateY(-2px);
 }
 
-.skye-card .directions-button svg {
+/*.skye-card .directions-button svg {
   margin-right: var(--spacing-xs);
+}*/
+
+.directions-button-arrow {
+  transform: rotate(180deg);
+  margin-left: var(--spacing-xs);
 }
 
 /* SPECIAL CARDS LAYOUT */

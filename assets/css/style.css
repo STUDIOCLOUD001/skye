@@ -1396,18 +1396,20 @@ body {
   -webkit-backdrop-filter: blur(var(--blur-amount));
 }
 
-#map-modal .modal-content {
-  position: relative;
+#map-modal .modal-content {position: relative;
   background-color: #fff;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   width: 100%;
   height: 100%;
   max-width: 1000px;
-  max-height: calc(100% - 2 * var(--spacing-lg));
+  max-height: calc(100% - 1 * var(--spacing-lg));
   margin: var(--spacing-lg);
   border-radius: 10px;
   overflow: hidden;
+  height: calc(100% - 1*var(--spacing-lg));
+  margin: auto 0px 0px 0px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0px 0px;
 }
 
 #map-modal .modal-close {
@@ -1548,12 +1550,12 @@ body {
   position: fixed;
   bottom: 0px;
   right: 0px;
-  height: calc(100% - 2*var(--spacing-lg));
-  margin: var(--spacing-lg);
+  height: calc(100% - 1*var(--spacing-lg));
+  margin: 0px 0px 0px 0px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0px 0px;
   background-color: var(--color-white);
   backdrop-filter: blur(var(--blur-amount));
   -webkit-backdrop-filter: blur(var(--blur-amount));
-  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
   display: flex;
   flex-direction: column;

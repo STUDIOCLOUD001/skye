@@ -1408,7 +1408,7 @@ body {
   margin: var(--spacing-lg);
   border-radius: 10px;
   overflow: hidden;
-  height: calc(100% - 1*var(--spacing-xl));
+  height: calc(100% - 1.4*var(--spacing-xl));
   margin: auto 0px 0px 0px;
   border-radius: var(--radius-lg) var(--radius-lg) 0px 0px;
 }
@@ -1551,7 +1551,7 @@ body {
   position: fixed;
   bottom: 0px;
   right: 0px;
-  height: calc(100% - 1*var(--spacing-xl));
+  height: calc(100% - 1.4*var(--spacing-xl));
   margin: 0px 0px 0px 0px;
   border-radius: var(--radius-lg) var(--radius-lg) 0px 0px;
   background-color: var(--color-white);

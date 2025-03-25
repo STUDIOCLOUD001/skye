@@ -949,7 +949,6 @@ body {
   align-items: flex-start;
   gap: var(--spacing-xs);
   padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-sm) var(--spacing-lg);
-  mix-blend-mode: plus-lighter;
 }
 
 .timeline-card-time-info {
